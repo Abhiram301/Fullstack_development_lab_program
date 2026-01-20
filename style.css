@@ -1,109 +1,101 @@
 :root {
-    --csk-yellow: #F9CD05;
-    --csk-blue: #163F88;
-    --csk-blue-dark: #0f2c61;
+    --codm-orange: #FFB900;
+    --codm-dark: #0a0a0a;
+    --codm-grey: #1a1a1a;
+    --codm-border: #333333;
+    --codm-accent: #2c313c;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f8f9fa;
+    background-color: var(--codm-dark);
+    color: #ffffff;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
-h1, h2, h3, h4, .navbar-brand {
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
+.tactical-text {
+    font-family: 'Black Ops One', cursive;
 }
 
-/* Custom Colors */
-.bg-csk-blue {
-    background-color: var(--csk-blue) !important;
-}
-
-.text-csk-blue {
-    color: var(--csk-blue) !important;
-}
-
-.bg-csk-yellow {
-    background-color: var(--csk-yellow) !important;
-}
-
-.text-csk-yellow {
-    color: var(--csk-yellow) !important;
-}
-
-.btn-csk-yellow {
-    background-color: var(--csk-yellow);
-    color: var(--csk-blue);
-    border: none;
-    transition: all 0.3s ease;
-}
-
-.btn-csk-yellow:hover {
-    background-color: #e5bc04;
-    color: var(--csk-blue-dark);
-    transform: scale(1.05);
+/* Navbar overrides */
+.bg-dark-tactical {
+    background-color: var(--codm-dark) !important;
 }
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, var(--csk-blue) 0%, var(--csk-blue-dark) 100%);
-    min-height: 50vh;
-    padding-top: 60px;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    border-bottom: 2px solid var(--codm-orange);
+}
+
+/* Operator Cards */
+.operator-card {
+    background: var(--codm-grey);
+    border: 1px solid var(--codm-border);
+    border-radius: 0;
+    /* Sharp military corners */
+    transition: all 0.3s ease;
+}
+
+.operator-card:hover {
+    border-color: var(--codm-orange);
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255, 185, 0, 0.2);
+}
+
+.card-img-container {
     position: relative;
     overflow: hidden;
+    background: #000;
 }
 
-.hero-section::after {
-    /* Optional: Add a texture or pattern overlay opacity if you had an image */
-    content: '';
+.char-img {
+    opacity: 0.8;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.operator-card:hover .char-img {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+.operator-badge {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(circle, transparent 20%, var(--csk-blue) 120%);
-    pointer-events: none;
-}
-
-.text-shadow {
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-}
-
-/* Player Cards */
-.player-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-    background: white;
-    border-radius: 10px;
-}
-
-.player-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
-    border-color: var(--csk-yellow) !important;
-}
-
-.img-placeholder {
-    height: 300px;
-    background-color: #ddd;
+    top: 10px;
+    right: 10px;
+    background: var(--codm-orange);
+    color: #000;
     font-weight: bold;
-    color: rgba(255,255,255,0.7);
+    padding: 2px 10px;
+    font-size: 0.8rem;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
 }
 
-/* Specific styling for 'highlight' cards (expensive buys) */
-.highlight-card {
-    border: 2px solid var(--csk-yellow) !important;
+.card-body {
+    border-top: 1px solid var(--codm-border);
 }
 
-/* Divider component */
-.divider {
-    height: 4px;
-    width: 80px;
-    border-radius: 2px;
-    margin-bottom: 2rem;
+/* Buttons (if needed) */
+.btn-warning {
+    background-color: var(--codm-orange);
+    border: none;
+    border-radius: 0;
+    font-family: 'Black Ops One', cursive;
+    color: #000;
 }
 
-/* Badge Tweaks */
-.badge {
-    font-weight: normal;
-    font-family: 'Oswald', sans-serif;
-    letter-spacing: 1px;
-    padding: 0.5em 0.8em;
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--codm-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--codm-orange);
 }
