@@ -1,6 +1,109 @@
+:root {
+    --csk-yellow: #F9CD05;
+    --csk-blue: #163F88;
+    --csk-blue-dark: #0f2c61;
+}
+
 body {
-    .div{
-        background-color: rgb(255, 255, 255);
-    }
-    background-color: rgb(51, 0, 255);
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+}
+
+h1, h2, h3, h4, .navbar-brand {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+/* Custom Colors */
+.bg-csk-blue {
+    background-color: var(--csk-blue) !important;
+}
+
+.text-csk-blue {
+    color: var(--csk-blue) !important;
+}
+
+.bg-csk-yellow {
+    background-color: var(--csk-yellow) !important;
+}
+
+.text-csk-yellow {
+    color: var(--csk-yellow) !important;
+}
+
+.btn-csk-yellow {
+    background-color: var(--csk-yellow);
+    color: var(--csk-blue);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-csk-yellow:hover {
+    background-color: #e5bc04;
+    color: var(--csk-blue-dark);
+    transform: scale(1.05);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--csk-blue) 0%, var(--csk-blue-dark) 100%);
+    min-height: 50vh;
+    padding-top: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::after {
+    /* Optional: Add a texture or pattern overlay opacity if you had an image */
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle, transparent 20%, var(--csk-blue) 120%);
+    pointer-events: none;
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+/* Player Cards */
+.player-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    background: white;
+    border-radius: 10px;
+}
+
+.player-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
+    border-color: var(--csk-yellow) !important;
+}
+
+.img-placeholder {
+    height: 300px;
+    background-color: #ddd;
+    font-weight: bold;
+    color: rgba(255,255,255,0.7);
+}
+
+/* Specific styling for 'highlight' cards (expensive buys) */
+.highlight-card {
+    border: 2px solid var(--csk-yellow) !important;
+}
+
+/* Divider component */
+.divider {
+    height: 4px;
+    width: 80px;
+    border-radius: 2px;
+    margin-bottom: 2rem;
+}
+
+/* Badge Tweaks */
+.badge {
+    font-weight: normal;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    padding: 0.5em 0.8em;
 }
